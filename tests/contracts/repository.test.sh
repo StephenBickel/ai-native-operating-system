@@ -21,6 +21,6 @@ rg -q 'pack' README.md
 while IFS= read -r dir; do
   test "$dir" = . && continue
   test -f "$dir/README.md" || { echo "$dir missing README.md"; exit 1; }
-done < <(find . -type d \( -path '*/node_modules' -o -path '*/node_modules/*' -o -path '*/.next' -o -path '*/.next/*' -o -path '*/test-results' -o -path '*/test-results/*' -o -path '*/playwright-report' -o -path '*/playwright-report/*' -o -path '*/coverage' -o -path '*/coverage/*' -o -path './.git' -o -path './.git/*' -o -path './.demo-output' -o -path './.worktrees' -o -path './.worktrees/*' \) -prune -o -type d -print)
+done < <(find . -type d \( -path '*/node_modules' -o -path '*/node_modules/*' -o -path '*/.pnpm-store' -o -path '*/.pnpm-store/*' -o -path '*/.next' -o -path '*/.next/*' -o -path '*/test-results' -o -path '*/test-results/*' -o -path '*/playwright-report' -o -path '*/playwright-report/*' -o -path '*/coverage' -o -path '*/coverage/*' -o -path './.git' -o -path './.git/*' -o -path './.demo-output' -o -path './.worktrees' -o -path './.worktrees/*' \) -prune -o -type d -print)
 
 echo "repository contracts passed"
