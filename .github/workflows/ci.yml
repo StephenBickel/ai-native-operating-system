@@ -20,6 +20,10 @@ jobs:
         with:
           node-version: 22
           cache: pnpm
+      - name: Refresh Ubuntu package index
+        run: sudo apt-get update
+      - name: Install repository validation tools
+        run: sudo apt-get install --yes ripgrep
       - run: pnpm install --frozen-lockfile
       - run: make validate
       - run: pnpm test
