@@ -1,0 +1,13 @@
+{
+  "name": "@anos/agent-runtime",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": { ".": "./src/index.ts" },
+  "scripts": { "build": "tsc --noEmit", "lint": "tsc --noEmit", "test": "vitest run", "typecheck": "tsc --noEmit" },
+  "dependencies": {
+    "@anos/model-providers": "workspace:*",
+    "@anos/operating-system": "workspace:*",
+    "@anos/tool-runtime": "workspace:*"
+  }
+}
