@@ -1,0 +1,16 @@
+name: Idea
+description: Capture a possible improvement before it becomes committed work.
+title: "[Idea]: "
+labels: ["idea"]
+body:
+  - type: textarea
+    id: problem
+    attributes: { label: Problem or opportunity }
+    validations: { required: true }
+  - type: textarea
+    id: value
+    attributes: { label: Who benefits and how }
+    validations: { required: true }
+  - type: textarea
+    id: constraints
+    attributes: { label: Known constraints, risks, or systems involved }

@@ -6,6 +6,7 @@
     "build": "pnpm -r build",
     "lint": "pnpm -r lint",
     "test": "pnpm -r test",
+    "test:e2e": "pnpm --filter @anos/web test:e2e",
     "typecheck": "pnpm -r typecheck"
   },
   "devDependencies": {

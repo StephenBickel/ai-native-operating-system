@@ -1,0 +1,37 @@
+services:
+  postgres:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_DB: anos
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d anos"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+    ports: ["5432:5432"]
+    volumes: ["anos-postgres:/var/lib/postgresql/data"]
+
+  web:
+    build: .
+    environment:
+      DATABASE_URL: postgresql://postgres:postgres@postgres:5432/anos
+      MODEL_PROVIDER: mock
+      INNGEST_DEV: "1"
+      INNGEST_BASE_URL: http://inngest:8288
+      BETTER_AUTH_URL: http://localhost:3000
+      BETTER_AUTH_SECRET: local-demo-secret-change-before-production
+      ENCRYPTION_KEY: local-demo-encryption-key-change-before-production
+    depends_on:
+      postgres: { condition: service_healthy }
+    ports: ["3000:3000"]
+
+  inngest:
+    image: inngest/inngest
+    command: ["inngest", "dev", "-u", "http://web:3000/api/inngest"]
+    depends_on: [web]
+    ports: ["8288:8288", "8289:8289"]
+
+volumes:
+  anos-postgres:

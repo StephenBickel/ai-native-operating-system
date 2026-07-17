@@ -1,3 +1,3 @@
 # Documentation
 
-This directory contains the client-facing guides, technical architecture, and build provenance for the AI Native Operating System. Agents may read any document here for context; they may update a document only when the underlying behavior or engagement model changes.
+Business and technical documentation lives here. Product contracts remain in `core/`; pack-specific procedures remain in `packs/`; deployment guides explain how customers run the same system on infrastructure they control.

@@ -1,0 +1,19 @@
+# Business value: route new work into a visible owner-and-status lifecycle before it can fall through the cracks.
+name: Issue task routing
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  issues: write
+
+jobs:
+  route:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Mark new task ready for review
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ISSUE_URL: ${{ github.event.issue.html_url }}
+        run: gh issue edit "$ISSUE_URL" --add-label "agent:ready"

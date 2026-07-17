@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "company-remote-tools": {
+      "transport": "http",
+      "url": "${COMPANY_MCP_URL}",
+      "headers": { "Authorization": "Bearer ${COMPANY_MCP_TOKEN}" }
+    },
+    "private-local-tools": {
+      "command": "node",
+      "args": ["./connectors/private-tools.mjs"],
+      "env": { "INTERNAL_DATABASE_URL": "${INTERNAL_DATABASE_URL}" }
+    }
+  }
+}
