@@ -1,0 +1,18 @@
+- name: agent:ready
+  color: "1D76DB"
+  description: Ready for an agent or human to claim.
+- name: agent:in-progress
+  color: "5319E7"
+  description: Claimed with an active run or owner.
+- name: needs-human
+  color: "FBCA04"
+  description: Waiting for a named approval or decision.
+- name: blocked
+  color: "B60205"
+  description: Waiting on a documented external condition.
+- name: idea
+  color: "C5DEF5"
+  description: Possible work that still needs shaping.
+- name: bug
+  color: "D73A4A"
+  description: Reproducible defect.

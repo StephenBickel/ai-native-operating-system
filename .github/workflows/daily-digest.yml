@@ -1,0 +1,22 @@
+# Business value: give the team one reviewable morning view of due work, approvals, and blocked handoffs.
+name: Daily operating digest
+
+on:
+  schedule:
+    - cron: "5 12 * * 1-5"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build secret-free demo digest
+        run: bash scripts/run-demo.sh
+      - uses: actions/upload-artifact@v4
+        with:
+          name: agency-digest
+          path: .demo-output/daily-agency-digest.md

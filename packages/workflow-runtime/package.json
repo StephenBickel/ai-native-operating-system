@@ -1,0 +1,9 @@
+{
+  "name": "@anos/workflow-runtime",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": { ".": "./src/index.ts" },
+  "scripts": { "build": "tsc --noEmit", "lint": "tsc --noEmit", "test": "vitest run", "typecheck": "tsc --noEmit" },
+  "dependencies": { "inngest": "^3.48.1", "zod": "^4.1.13" }
+}

@@ -1,0 +1,25 @@
+name: Task
+description: Create owned work with evidence and a clear finish line.
+title: "[Task]: "
+labels: ["agent:ready"]
+body:
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Business outcome
+      description: What should be true when this is done?
+    validations: { required: true }
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Context and source records
+      description: Link the relevant approved records; do not paste secrets or sensitive data.
+    validations: { required: true }
+  - type: input
+    id: owner
+    attributes: { label: Human owner or approver }
+    validations: { required: true }
+  - type: textarea
+    id: done
+    attributes: { label: Acceptance checks }
+    validations: { required: true }

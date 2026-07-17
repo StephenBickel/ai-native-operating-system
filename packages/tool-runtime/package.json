@@ -1,0 +1,9 @@
+{
+  "name": "@anos/tool-runtime",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": { ".": "./src/index.ts" },
+  "scripts": { "build": "tsc --noEmit", "lint": "tsc --noEmit", "test": "vitest run", "typecheck": "tsc --noEmit" },
+  "dependencies": { "@anos/operating-system": "workspace:*", "zod": "^4.1.13" }
+}

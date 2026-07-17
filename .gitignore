@@ -1,5 +1,6 @@
 .worktrees/
 node_modules/
+.pnpm-store/
 .next/
 coverage/
 playwright-report/
@@ -8,4 +9,5 @@ test-results/
 .env
 .env.local
 *.log
+*.tsbuildinfo
 .DS_Store
