@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "internal-projects": {
+      "command": "node",
+      "args": ["./connectors/internal-projects.mjs"],
+      "env": { "DATABASE_URL": "${INTERNAL_PROJECTS_DATABASE_URL}" }
+    }
+  }
+}
